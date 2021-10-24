@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/styles1.css">
+    <title>AIR GAP</title>
+</head>
+
+<body>
+    <div class="container" id="advanced-search-form">
+        <h2>Registro nuevos usuarios</h2>
+        
+        <form method="post" action="/store">
+            <div class="form-group">
+                <label for="first-name">Identificacion</label>
+                <input type="number" name="txtId" class="form-control"  id="first-name">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Nombre</label>
+                <input type="text" name="txtNombre" class="form-control"  id="last-name">
+            </div>
+            <div class="form-group">
+                <label for="country">Apellidos</label>
+                <input type="text" name="txtApellido" class="form-control"  id="country">
+            </div>
+
+            <div class="form-group">
+                <label for="number">Genero</label>
+                <select name="genero" method="GET" class="form-control">
+                    {% for registro in genero %}
+                        <option value= "{{registro[0]}}" SELECTED>{{registro[1]}}</option>"
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="number">Correo</label>
+                <input type="email" name="txtCorreo" class="form-control"  id="number">
+            </div>
+           
+           <div class="form-group">
+                <label for="age">Fecha de nacimiento</label>
+                <input type="date" name="txtFecha" class="form-control"  id="age">
+            </div>
+
+
+            <div class="form-group">
+                <label for="email">Usuario</label>
+                <input type="text" name="txtUsuario" class="form-control"  id="email">
+            </div>
+            <div class="form-group">
+                <label for="education">Contraseña</label>
+                <input type="password" name="txtContrasena" class="form-control"  id="education">
+            </div>
+
+           
+
+            
+                       
+           
+            <div class="clearfix"></div>
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="search">Registrarse</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/styles1.css">
+    <title>AIR GAP</title>
+</head>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">AIR GAP</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="/indexAdmin">Inicio</a></li>
+        <li><a href="/userAdmin">Usuarios</a></li>
+        <li><a href="/pilotAdmin">Pilotos</a></li>
+        <li><a href="/flightAdmin">Vuelos</a></li>
+        <li><a href="/rateAdmin">Calificaciones</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+       
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuario</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<body>
+
+    <div class="container" id="advanced-search-form">
+        
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Gestion de vuelos</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/flightAdd">Agregar vuelo</a></li>
+      <li><a href="/flightDelete">Eliminar vuelo</a></li>
+      <li><a href="/flightEdit">Editar vuelo</a></li>
+    </ul>
+  </div>
+</nav>
+
+        <h2>Agregar vuelo</h2>
+        
+        
+        <form method="post" action="/addVuelo">
+            
+            <div class="form-group">
+                <label for="first-name">Origen</label> <br>
+                <select name="origen" class="form-control">
+                    <option selected>Selecciona una</option>
+                    <option value="1">Monteria</option>
+                    <option value="2">Medellin</option>
+                    <option value="3">Bogota</option>
+                    <option value="4">Barranquilla</option>
+                    <option value="5">Bucaramanga</option>
+                    <option value="6">Santa Marta</option>
+                    <option value="7">Cali</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="first-name">Destino</label> <br>
+                <select  name="destino" class="form-control">
+                    <option selected>Selecciona una</option>
+                    <option value="1">Monteria</option>
+                    <option value="2">Medellin</option>
+                    <option value="3">Bogota</option>
+                    <option value="4">Barranquilla</option>
+                    <option value="5">Bucaramanga</option>
+                    <option value="6">Santa Marta</option>
+                    <option value="7">Cali</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="number">Piloto</label>
+                <select name="piloto" method="GET" class="form-control">
+                    {% for registro in pilotos %}
+                        <option value= "{{registro[0]}}" SELECTED>{{registro[2],registro[3]}}</option>"
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="form-group2">
+                <label for="age">Fecha del vuelo</label>
+                <input type="date" name="fecha" class="form-control"  id="age">
+            </div>
+                       
+           
+            <div class="clearfix"></div>
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="search">Agregar</button>
+        </form>
+    
+
+    </div>
+    
+
+
+</body>
+
+</html>

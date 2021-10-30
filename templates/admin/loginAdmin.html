@@ -1,13 +1,16 @@
 <div class="login-page">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="../../static/css/styles2.css">
   <div class="form">
     <h1>ADMINISTRADOR</h1>
     
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+    <form class="login-form" method="POST" action="/admin_login">
+      <input type="text" name="txtUsuario" placeholder="Usuario"/>
+      <input type="password" name="txtContrasena" placeholder="Contrasena"/>
       <button>login</button>
       
     </form>
+    <button><center><a href="/">HOME</a><center></button>
+    
   </div>
 </div>

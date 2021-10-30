@@ -27,8 +27,8 @@
         <li><a href="/reservaFlight">Reserva tu vuelo</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuario</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+       <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{session['usuario']}} </a></li>
+        <li><a href="/logoutUser"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
       </ul>
     </div>
   </div>
@@ -41,24 +41,24 @@
         <h2>Reserva tu viaje</h2>
         
         
-        <form>
+        <form method="post" action="/addReserva">
             
             <div class="form-group">
-                <label for="number">Piloto</label>
-                <select name="vuelos" method="GET" class="form-control">
+                <label for="number">ORIGEN-DESTINO</label>
+                <select name="lugarTxt" method="GET" class="form-control">
                     {% for registro in vuelos %}
-                        <option value= "{{registro[0]}}" SELECTED>{{registro[1],registro[2]}}</option>"
+                        <option value= "{{registro[0]}}" SELECTED>{{registro[2],registro[4]}}</option>"
                     {% endfor %}
                 </select>
             </div>
             
             <div class="form-group2">
                 <label for="age">Fecha</label>
-                <input type="date" class="form-control"  id="age">
+                <input type="date" class="form-control"  name="fechaTxt">
             </div>
             <div class="form-group2">
                 <label for="age">Fecha regreso</label>
-                <input type="date" class="form-control"  id="age">
+                <input type="date" class="form-control"  name="fechaRegresoTxt">
             </div>
            
            

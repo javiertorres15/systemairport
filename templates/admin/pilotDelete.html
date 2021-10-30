@@ -30,7 +30,7 @@
       <ul class="nav navbar-nav navbar-right">
        
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuario</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+        <li><a href="/logoutAdmin"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
       </ul>
     </div>
   </div>
@@ -62,35 +62,23 @@
       <th scope="col">ID</th>
       <th scope="col">Nombres</th>
       <th scope="col">Apellido</th>
+      <th scope="col">Correo</th>
       <th scope="col">Accion</th>
     </tr>
   </thead>
   <tbody>
+  {% for piloto in pilotos %}
    <tr>
-      <th scope="row">1</th>
-      <td>1005605888</td>
-      <td>Carlos</td>
-      <td>Mosquera Arboleda</td>
-      <td>Eliminar</td>
+      <td>{{piloto[0]}}</td>
+      <td>{{piloto[1]}}</td>
+      <td>{{piloto[2]}}</td>
+      <td>{{piloto[3]}}</td>
+      <td>{{piloto[5]}}</td>
+      <td><a href="/destroyPilot/{{piloto[0]}}">Eliminar</a> 
       
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>1005605888</td>
-      <td>Jose Carlos</td>
-      <td>Arboleda</td>
-      <td>Eliminar</td>
-     
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>1005605888</td>
-      <td>CArlos Mario</td>
-      <td>Mosquera Arboleda</td>
-      <td>Eliminar</td>
-      
-    </tr>
-    </tr>
+  {% endfor %}
+    
   </tbody>
 </table>
             

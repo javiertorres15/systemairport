@@ -30,7 +30,7 @@
       <ul class="nav navbar-nav navbar-right">
        
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuario</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+        <li><a href="/logoutAdmin"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
       </ul>
     </div>
   </div>
@@ -69,31 +69,16 @@
     </tr>
   </thead>
   <tbody>
+  {% for vuelo in vuelos %}
     <tr>
-      <th scope="row">1</th>
-      <td>Monteria</td>
-      <td>Bogota</td>
-      <td>Carlos Mosquera Arboleda</td>
-      <td>13/10/2021</td>
+      <th >{{vuelo[0]}}</th>
+      <td>{{vuelo[1]}}</td>
+      <td>{{vuelo[2]}}</td>
+      <td>{{vuelo[3]}}</td>
+      <td>{{vuelo[4]}}</td>
       <td href="#">Eliminar</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Medellin</td>
-      <td>Monteria</td>
-      <td>Carlos Mosquera Arboleda</td>
-      <td>13/10/2021</td>
-      <td href="#">Eliminar</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Bogota</td>
-      <td>Monteria</td>
-      <td>Carlos Mosquera Arboleda</td>
-      <td>13/10/2021</td>
-      <td href="#">Eliminar</td>
-    </tr>
-  </tbody>
+  {% endfor %}
 </table>
             
         </form>

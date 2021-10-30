@@ -30,7 +30,7 @@
       <ul class="nav navbar-nav navbar-right">
        
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuario</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+        <li><a href="/logoutAdmin"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
       </ul>
     </div>
   </div>
@@ -51,38 +51,22 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Autor</th>
       <th scope="col">Comentario</th>
-      <th scope="col">Dar respuesta</th>
+      <th scope="col">Calificacion</th>
       <th scope="col">Gestion</th>
     </tr>
   </thead>
   <tbody>
+  {% for sugerencia in sugerencias %}
     <tr>
-      <th scope="row">1</th>
-      <td>Jorge Mendez</td>
-      <td>Excelente servicio</td>
+      <th>{{sugerencia[0]}}</th>
+      <td>{{sugerencia[1]}}</td>
+      <td>{{sugerencia[2]}}</td>
       <td><input type="text"></td>
-      <td>Enviar</td>
+      <td><input type="submit"></td>
       
     </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Jorge Mendez</td>
-      <td>Excelente servicio</td>
-      <td><input type="text"></td>
-      <td>Enviar</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Jorge Mendez</td>
-      <td>Excelente servicio</td>
-      <td><input type="text"></td>
-      <td>Enviar</td>
-      
-    </tr>
-  </tbody>
+  {% endfor %}  
 </table>
             
         </form>
